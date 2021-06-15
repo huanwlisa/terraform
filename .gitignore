@@ -9,3 +9,5 @@ AZURE/.terraform/providers/registry.terraform.io/hashicorp/azurerm/2.63.0/window
 ALI/.terraform/providers/registry.terraform.io/hashicorp/alicloud/1.124.2/windows_amd64/terraform-provider-alicloud_v1.124.2.exe
 ALI/terraform.tfstate
 ALI/.terraform.lock.hcl
+ALI/.terraform/providers/registry.terraform.io/aliyun/alicloud/1.124.2/windows_amd64/terraform-provider-alicloud_v1.124.2.exe
+ALI/.terraform/terraform.tfstate
