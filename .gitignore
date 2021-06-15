@@ -4,3 +4,8 @@ AWS/.terraform.lock.hcl
 AZURE/.terraform/terraform.tfstate
 AZURE/.terraform/providers/registry.terraform.io/hashicorp/azurerm/2.62.1/windows_amd64/terraform-provider-azurerm_v2.62.1_x5.exe
 AZURE/.terraform.lock.hcl
+AWS/.terraform/providers/registry.terraform.io/hashicorp/aws/3.45.0/windows_amd64/terraform-provider-aws_v3.45.0_x5.exe
+AZURE/.terraform/providers/registry.terraform.io/hashicorp/azurerm/2.63.0/windows_amd64/terraform-provider-azurerm_v2.63.0_x5.exe
+ALI/.terraform/providers/registry.terraform.io/hashicorp/alicloud/1.124.2/windows_amd64/terraform-provider-alicloud_v1.124.2.exe
+ALI/terraform.tfstate
+ALI/.terraform.lock.hcl
