@@ -23,38 +23,6 @@ terraform {
     }
   }
 }
-variable "location" {
-  default = [
-"cn-qingdao",
-"cn-beijing",
-"cn-zhangjiakou",
-"cn-huhehaote",
-"cn-wulanchabu",
-"cn-hangzhou",
-"cn-shanghai",
-"cn-shenzhen",
-"cn-heyuan",
-"cn-guangzhou",
-"cn-chengdu",
-"cn-hongkong",
-  ]
-}
-variable "vnet_address" {
-  default = [
-"10.0.0.0/16",
-"10.1.0.0/16",
-"10.2.0.0/16",
-"10.3.0.0/16",
-"10.4.0.0/16",
-"10.5.0.0/16",
-"10.6.0.0/16",
-"10.7.0.0/16",
-"10.8.0.0/16",
-"10.9.0.0/16",
-"10.10.0.0/16",
-"10.11.0.0/16",
-  ]
-}
 data "alicloud_zones" "zones_ds_qingdao" {
  provider = alicloud.qingdao
  # available_instance_type = "ecs.n4.large"
@@ -300,62 +268,62 @@ resource "alicloud_vswitch" "alivsw-hongkong" {
 resource "alicloud_ecs_key_pair" "publickey-qingdao" {
   provider = alicloud.qingdao
   key_pair_name   = "my_public_key-qingdao"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDOTPlCoh2g9l/XorzfbE6w90Vr4w8mX51JnXemQ74GJHfdjTQJ2yWQv/wDt4/wEI3A7Al/66vnNuR5skn8WkTvQFor+JYsxwJs/yDXfpwHjECW86N7dBhFX5etPhqK8QdsvuyoXNhZyGRAJS/4Gl3QUWa8yESP5sQQe99A5XURXH6s5s43hJ0dYLihx+365nqEPq2W22ynQv0FHJwaBuFHsDu8FRhtSnLowBN5cQwUNLS4U4cB8FQVg1qXNbfYfxyv1tT/kSmsurQQHF3d0LSEtolbJLUlGJpQ+Ixr54fiBikDutWm3A4m0vvNE9eY5ITv08wRZwzpgzX0AWQ6FKEj+MUDaK1hlx7MwyG9HPnLtxVMxDiJPDuN5DxXtGN67rAOYqBayc2K5WR5rMcZVbp7zPjsKswXp7a/jLZrw5/hwKwv0mtV85xYFQA/zsoP5SCV6mlNEHT7SO+n24dh5s4+SJzlL30zAxBQt151B0BAEqtCkyQInebTD+YJLCzI57E= huanw@outlook.com"
+ public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCd74+93PDWMWZuE4I5E9QTLPd5SKNZERw0HPhmsExLeTzGvdTRR9Yytcb8y9zmm5QegHjKeFFJY0wEdeafGdQQ0MYfMSka70BVG8kOnbuKhlipmNMY/86lUQZnXOKF8MDX1NtaffXCydVWZRvlDfZd2jcKlmSfY1rysYD2y9Ct5G8HVBxRUMNGqKwjUAu1BmuCyKbTVvxiHibLeM7GHhDzoSfUUZi0BvwHehIrTTgpVmcm4lBKvJXSIKwQytmWeyOHWDNWUjlzPVCbsnmuOS0xrz0jjKvh3X9c+UujRS0NN63aW+Hg/DPJ1FbAqEcAzfK84Mxlz3u0G4E1DGUargrV skp-m5e5q0sg3ouk59q7m3qi"
 }
 resource "alicloud_ecs_key_pair" "publickey-beijing" {
   provider = alicloud.beijing
   key_pair_name   = "my_public_key-beijing"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDOTPlCoh2g9l/XorzfbE6w90Vr4w8mX51JnXemQ74GJHfdjTQJ2yWQv/wDt4/wEI3A7Al/66vnNuR5skn8WkTvQFor+JYsxwJs/yDXfpwHjECW86N7dBhFX5etPhqK8QdsvuyoXNhZyGRAJS/4Gl3QUWa8yESP5sQQe99A5XURXH6s5s43hJ0dYLihx+365nqEPq2W22ynQv0FHJwaBuFHsDu8FRhtSnLowBN5cQwUNLS4U4cB8FQVg1qXNbfYfxyv1tT/kSmsurQQHF3d0LSEtolbJLUlGJpQ+Ixr54fiBikDutWm3A4m0vvNE9eY5ITv08wRZwzpgzX0AWQ6FKEj+MUDaK1hlx7MwyG9HPnLtxVMxDiJPDuN5DxXtGN67rAOYqBayc2K5WR5rMcZVbp7zPjsKswXp7a/jLZrw5/hwKwv0mtV85xYFQA/zsoP5SCV6mlNEHT7SO+n24dh5s4+SJzlL30zAxBQt151B0BAEqtCkyQInebTD+YJLCzI57E= huanw@outlook.com"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCd74+93PDWMWZuE4I5E9QTLPd5SKNZERw0HPhmsExLeTzGvdTRR9Yytcb8y9zmm5QegHjKeFFJY0wEdeafGdQQ0MYfMSka70BVG8kOnbuKhlipmNMY/86lUQZnXOKF8MDX1NtaffXCydVWZRvlDfZd2jcKlmSfY1rysYD2y9Ct5G8HVBxRUMNGqKwjUAu1BmuCyKbTVvxiHibLeM7GHhDzoSfUUZi0BvwHehIrTTgpVmcm4lBKvJXSIKwQytmWeyOHWDNWUjlzPVCbsnmuOS0xrz0jjKvh3X9c+UujRS0NN63aW+Hg/DPJ1FbAqEcAzfK84Mxlz3u0G4E1DGUargrV skp-m5e5q0sg3ouk59q7m3qi"
 }
 resource "alicloud_ecs_key_pair" "publickey-zhangjiakou" {
   provider = alicloud.zhangjiakou
   key_pair_name   = "my_public_key-zhangjiakou"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDOTPlCoh2g9l/XorzfbE6w90Vr4w8mX51JnXemQ74GJHfdjTQJ2yWQv/wDt4/wEI3A7Al/66vnNuR5skn8WkTvQFor+JYsxwJs/yDXfpwHjECW86N7dBhFX5etPhqK8QdsvuyoXNhZyGRAJS/4Gl3QUWa8yESP5sQQe99A5XURXH6s5s43hJ0dYLihx+365nqEPq2W22ynQv0FHJwaBuFHsDu8FRhtSnLowBN5cQwUNLS4U4cB8FQVg1qXNbfYfxyv1tT/kSmsurQQHF3d0LSEtolbJLUlGJpQ+Ixr54fiBikDutWm3A4m0vvNE9eY5ITv08wRZwzpgzX0AWQ6FKEj+MUDaK1hlx7MwyG9HPnLtxVMxDiJPDuN5DxXtGN67rAOYqBayc2K5WR5rMcZVbp7zPjsKswXp7a/jLZrw5/hwKwv0mtV85xYFQA/zsoP5SCV6mlNEHT7SO+n24dh5s4+SJzlL30zAxBQt151B0BAEqtCkyQInebTD+YJLCzI57E= huanw@outlook.com"
+ public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCd74+93PDWMWZuE4I5E9QTLPd5SKNZERw0HPhmsExLeTzGvdTRR9Yytcb8y9zmm5QegHjKeFFJY0wEdeafGdQQ0MYfMSka70BVG8kOnbuKhlipmNMY/86lUQZnXOKF8MDX1NtaffXCydVWZRvlDfZd2jcKlmSfY1rysYD2y9Ct5G8HVBxRUMNGqKwjUAu1BmuCyKbTVvxiHibLeM7GHhDzoSfUUZi0BvwHehIrTTgpVmcm4lBKvJXSIKwQytmWeyOHWDNWUjlzPVCbsnmuOS0xrz0jjKvh3X9c+UujRS0NN63aW+Hg/DPJ1FbAqEcAzfK84Mxlz3u0G4E1DGUargrV skp-m5e5q0sg3ouk59q7m3qi"
 }
 resource "alicloud_ecs_key_pair" "publickey-huhehaote" {
   provider = alicloud.huhehaote
   key_pair_name   = "my_public_key-huhehaote"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDOTPlCoh2g9l/XorzfbE6w90Vr4w8mX51JnXemQ74GJHfdjTQJ2yWQv/wDt4/wEI3A7Al/66vnNuR5skn8WkTvQFor+JYsxwJs/yDXfpwHjECW86N7dBhFX5etPhqK8QdsvuyoXNhZyGRAJS/4Gl3QUWa8yESP5sQQe99A5XURXH6s5s43hJ0dYLihx+365nqEPq2W22ynQv0FHJwaBuFHsDu8FRhtSnLowBN5cQwUNLS4U4cB8FQVg1qXNbfYfxyv1tT/kSmsurQQHF3d0LSEtolbJLUlGJpQ+Ixr54fiBikDutWm3A4m0vvNE9eY5ITv08wRZwzpgzX0AWQ6FKEj+MUDaK1hlx7MwyG9HPnLtxVMxDiJPDuN5DxXtGN67rAOYqBayc2K5WR5rMcZVbp7zPjsKswXp7a/jLZrw5/hwKwv0mtV85xYFQA/zsoP5SCV6mlNEHT7SO+n24dh5s4+SJzlL30zAxBQt151B0BAEqtCkyQInebTD+YJLCzI57E= huanw@outlook.com"
+ public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCd74+93PDWMWZuE4I5E9QTLPd5SKNZERw0HPhmsExLeTzGvdTRR9Yytcb8y9zmm5QegHjKeFFJY0wEdeafGdQQ0MYfMSka70BVG8kOnbuKhlipmNMY/86lUQZnXOKF8MDX1NtaffXCydVWZRvlDfZd2jcKlmSfY1rysYD2y9Ct5G8HVBxRUMNGqKwjUAu1BmuCyKbTVvxiHibLeM7GHhDzoSfUUZi0BvwHehIrTTgpVmcm4lBKvJXSIKwQytmWeyOHWDNWUjlzPVCbsnmuOS0xrz0jjKvh3X9c+UujRS0NN63aW+Hg/DPJ1FbAqEcAzfK84Mxlz3u0G4E1DGUargrV skp-m5e5q0sg3ouk59q7m3qi"
 }
 resource "alicloud_ecs_key_pair" "publickey-wulanchabu" {
   provider = alicloud.wulanchabu
   key_pair_name   = "my_public_key-wulanchabu"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDOTPlCoh2g9l/XorzfbE6w90Vr4w8mX51JnXemQ74GJHfdjTQJ2yWQv/wDt4/wEI3A7Al/66vnNuR5skn8WkTvQFor+JYsxwJs/yDXfpwHjECW86N7dBhFX5etPhqK8QdsvuyoXNhZyGRAJS/4Gl3QUWa8yESP5sQQe99A5XURXH6s5s43hJ0dYLihx+365nqEPq2W22ynQv0FHJwaBuFHsDu8FRhtSnLowBN5cQwUNLS4U4cB8FQVg1qXNbfYfxyv1tT/kSmsurQQHF3d0LSEtolbJLUlGJpQ+Ixr54fiBikDutWm3A4m0vvNE9eY5ITv08wRZwzpgzX0AWQ6FKEj+MUDaK1hlx7MwyG9HPnLtxVMxDiJPDuN5DxXtGN67rAOYqBayc2K5WR5rMcZVbp7zPjsKswXp7a/jLZrw5/hwKwv0mtV85xYFQA/zsoP5SCV6mlNEHT7SO+n24dh5s4+SJzlL30zAxBQt151B0BAEqtCkyQInebTD+YJLCzI57E= huanw@outlook.com"
+ public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCd74+93PDWMWZuE4I5E9QTLPd5SKNZERw0HPhmsExLeTzGvdTRR9Yytcb8y9zmm5QegHjKeFFJY0wEdeafGdQQ0MYfMSka70BVG8kOnbuKhlipmNMY/86lUQZnXOKF8MDX1NtaffXCydVWZRvlDfZd2jcKlmSfY1rysYD2y9Ct5G8HVBxRUMNGqKwjUAu1BmuCyKbTVvxiHibLeM7GHhDzoSfUUZi0BvwHehIrTTgpVmcm4lBKvJXSIKwQytmWeyOHWDNWUjlzPVCbsnmuOS0xrz0jjKvh3X9c+UujRS0NN63aW+Hg/DPJ1FbAqEcAzfK84Mxlz3u0G4E1DGUargrV skp-m5e5q0sg3ouk59q7m3qi"
 }
 resource "alicloud_ecs_key_pair" "publickey-hangzhou" {
   provider = alicloud.hangzhou
   key_pair_name   = "my_public_key-hangzhou"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDOTPlCoh2g9l/XorzfbE6w90Vr4w8mX51JnXemQ74GJHfdjTQJ2yWQv/wDt4/wEI3A7Al/66vnNuR5skn8WkTvQFor+JYsxwJs/yDXfpwHjECW86N7dBhFX5etPhqK8QdsvuyoXNhZyGRAJS/4Gl3QUWa8yESP5sQQe99A5XURXH6s5s43hJ0dYLihx+365nqEPq2W22ynQv0FHJwaBuFHsDu8FRhtSnLowBN5cQwUNLS4U4cB8FQVg1qXNbfYfxyv1tT/kSmsurQQHF3d0LSEtolbJLUlGJpQ+Ixr54fiBikDutWm3A4m0vvNE9eY5ITv08wRZwzpgzX0AWQ6FKEj+MUDaK1hlx7MwyG9HPnLtxVMxDiJPDuN5DxXtGN67rAOYqBayc2K5WR5rMcZVbp7zPjsKswXp7a/jLZrw5/hwKwv0mtV85xYFQA/zsoP5SCV6mlNEHT7SO+n24dh5s4+SJzlL30zAxBQt151B0BAEqtCkyQInebTD+YJLCzI57E= huanw@outlook.com"
+ public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCd74+93PDWMWZuE4I5E9QTLPd5SKNZERw0HPhmsExLeTzGvdTRR9Yytcb8y9zmm5QegHjKeFFJY0wEdeafGdQQ0MYfMSka70BVG8kOnbuKhlipmNMY/86lUQZnXOKF8MDX1NtaffXCydVWZRvlDfZd2jcKlmSfY1rysYD2y9Ct5G8HVBxRUMNGqKwjUAu1BmuCyKbTVvxiHibLeM7GHhDzoSfUUZi0BvwHehIrTTgpVmcm4lBKvJXSIKwQytmWeyOHWDNWUjlzPVCbsnmuOS0xrz0jjKvh3X9c+UujRS0NN63aW+Hg/DPJ1FbAqEcAzfK84Mxlz3u0G4E1DGUargrV skp-m5e5q0sg3ouk59q7m3qi"
 }
 resource "alicloud_ecs_key_pair" "publickey-shanghai" {
   provider = alicloud.shanghai
   key_pair_name   = "my_public_key-shanghai"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDOTPlCoh2g9l/XorzfbE6w90Vr4w8mX51JnXemQ74GJHfdjTQJ2yWQv/wDt4/wEI3A7Al/66vnNuR5skn8WkTvQFor+JYsxwJs/yDXfpwHjECW86N7dBhFX5etPhqK8QdsvuyoXNhZyGRAJS/4Gl3QUWa8yESP5sQQe99A5XURXH6s5s43hJ0dYLihx+365nqEPq2W22ynQv0FHJwaBuFHsDu8FRhtSnLowBN5cQwUNLS4U4cB8FQVg1qXNbfYfxyv1tT/kSmsurQQHF3d0LSEtolbJLUlGJpQ+Ixr54fiBikDutWm3A4m0vvNE9eY5ITv08wRZwzpgzX0AWQ6FKEj+MUDaK1hlx7MwyG9HPnLtxVMxDiJPDuN5DxXtGN67rAOYqBayc2K5WR5rMcZVbp7zPjsKswXp7a/jLZrw5/hwKwv0mtV85xYFQA/zsoP5SCV6mlNEHT7SO+n24dh5s4+SJzlL30zAxBQt151B0BAEqtCkyQInebTD+YJLCzI57E= huanw@outlook.com"
+ public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCd74+93PDWMWZuE4I5E9QTLPd5SKNZERw0HPhmsExLeTzGvdTRR9Yytcb8y9zmm5QegHjKeFFJY0wEdeafGdQQ0MYfMSka70BVG8kOnbuKhlipmNMY/86lUQZnXOKF8MDX1NtaffXCydVWZRvlDfZd2jcKlmSfY1rysYD2y9Ct5G8HVBxRUMNGqKwjUAu1BmuCyKbTVvxiHibLeM7GHhDzoSfUUZi0BvwHehIrTTgpVmcm4lBKvJXSIKwQytmWeyOHWDNWUjlzPVCbsnmuOS0xrz0jjKvh3X9c+UujRS0NN63aW+Hg/DPJ1FbAqEcAzfK84Mxlz3u0G4E1DGUargrV skp-m5e5q0sg3ouk59q7m3qi"
 }
 resource "alicloud_ecs_key_pair" "publickey-shenzhen" {
   provider = alicloud.shenzhen
   key_pair_name   = "my_public_key-shenzhen"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDOTPlCoh2g9l/XorzfbE6w90Vr4w8mX51JnXemQ74GJHfdjTQJ2yWQv/wDt4/wEI3A7Al/66vnNuR5skn8WkTvQFor+JYsxwJs/yDXfpwHjECW86N7dBhFX5etPhqK8QdsvuyoXNhZyGRAJS/4Gl3QUWa8yESP5sQQe99A5XURXH6s5s43hJ0dYLihx+365nqEPq2W22ynQv0FHJwaBuFHsDu8FRhtSnLowBN5cQwUNLS4U4cB8FQVg1qXNbfYfxyv1tT/kSmsurQQHF3d0LSEtolbJLUlGJpQ+Ixr54fiBikDutWm3A4m0vvNE9eY5ITv08wRZwzpgzX0AWQ6FKEj+MUDaK1hlx7MwyG9HPnLtxVMxDiJPDuN5DxXtGN67rAOYqBayc2K5WR5rMcZVbp7zPjsKswXp7a/jLZrw5/hwKwv0mtV85xYFQA/zsoP5SCV6mlNEHT7SO+n24dh5s4+SJzlL30zAxBQt151B0BAEqtCkyQInebTD+YJLCzI57E= huanw@outlook.com"
+ public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCd74+93PDWMWZuE4I5E9QTLPd5SKNZERw0HPhmsExLeTzGvdTRR9Yytcb8y9zmm5QegHjKeFFJY0wEdeafGdQQ0MYfMSka70BVG8kOnbuKhlipmNMY/86lUQZnXOKF8MDX1NtaffXCydVWZRvlDfZd2jcKlmSfY1rysYD2y9Ct5G8HVBxRUMNGqKwjUAu1BmuCyKbTVvxiHibLeM7GHhDzoSfUUZi0BvwHehIrTTgpVmcm4lBKvJXSIKwQytmWeyOHWDNWUjlzPVCbsnmuOS0xrz0jjKvh3X9c+UujRS0NN63aW+Hg/DPJ1FbAqEcAzfK84Mxlz3u0G4E1DGUargrV skp-m5e5q0sg3ouk59q7m3qi"
 }
 resource "alicloud_ecs_key_pair" "publickey-heyuan" {
   provider = alicloud.heyuan
   key_pair_name   = "my_public_key-heyuan"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDOTPlCoh2g9l/XorzfbE6w90Vr4w8mX51JnXemQ74GJHfdjTQJ2yWQv/wDt4/wEI3A7Al/66vnNuR5skn8WkTvQFor+JYsxwJs/yDXfpwHjECW86N7dBhFX5etPhqK8QdsvuyoXNhZyGRAJS/4Gl3QUWa8yESP5sQQe99A5XURXH6s5s43hJ0dYLihx+365nqEPq2W22ynQv0FHJwaBuFHsDu8FRhtSnLowBN5cQwUNLS4U4cB8FQVg1qXNbfYfxyv1tT/kSmsurQQHF3d0LSEtolbJLUlGJpQ+Ixr54fiBikDutWm3A4m0vvNE9eY5ITv08wRZwzpgzX0AWQ6FKEj+MUDaK1hlx7MwyG9HPnLtxVMxDiJPDuN5DxXtGN67rAOYqBayc2K5WR5rMcZVbp7zPjsKswXp7a/jLZrw5/hwKwv0mtV85xYFQA/zsoP5SCV6mlNEHT7SO+n24dh5s4+SJzlL30zAxBQt151B0BAEqtCkyQInebTD+YJLCzI57E= huanw@outlook.com"
+ public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCd74+93PDWMWZuE4I5E9QTLPd5SKNZERw0HPhmsExLeTzGvdTRR9Yytcb8y9zmm5QegHjKeFFJY0wEdeafGdQQ0MYfMSka70BVG8kOnbuKhlipmNMY/86lUQZnXOKF8MDX1NtaffXCydVWZRvlDfZd2jcKlmSfY1rysYD2y9Ct5G8HVBxRUMNGqKwjUAu1BmuCyKbTVvxiHibLeM7GHhDzoSfUUZi0BvwHehIrTTgpVmcm4lBKvJXSIKwQytmWeyOHWDNWUjlzPVCbsnmuOS0xrz0jjKvh3X9c+UujRS0NN63aW+Hg/DPJ1FbAqEcAzfK84Mxlz3u0G4E1DGUargrV skp-m5e5q0sg3ouk59q7m3qi"
 }
 resource "alicloud_ecs_key_pair" "publickey-guangzhou" {
   provider = alicloud.guangzhou
   key_pair_name   = "my_public_key-guangzhou"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDOTPlCoh2g9l/XorzfbE6w90Vr4w8mX51JnXemQ74GJHfdjTQJ2yWQv/wDt4/wEI3A7Al/66vnNuR5skn8WkTvQFor+JYsxwJs/yDXfpwHjECW86N7dBhFX5etPhqK8QdsvuyoXNhZyGRAJS/4Gl3QUWa8yESP5sQQe99A5XURXH6s5s43hJ0dYLihx+365nqEPq2W22ynQv0FHJwaBuFHsDu8FRhtSnLowBN5cQwUNLS4U4cB8FQVg1qXNbfYfxyv1tT/kSmsurQQHF3d0LSEtolbJLUlGJpQ+Ixr54fiBikDutWm3A4m0vvNE9eY5ITv08wRZwzpgzX0AWQ6FKEj+MUDaK1hlx7MwyG9HPnLtxVMxDiJPDuN5DxXtGN67rAOYqBayc2K5WR5rMcZVbp7zPjsKswXp7a/jLZrw5/hwKwv0mtV85xYFQA/zsoP5SCV6mlNEHT7SO+n24dh5s4+SJzlL30zAxBQt151B0BAEqtCkyQInebTD+YJLCzI57E= huanw@outlook.com"
+ public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCd74+93PDWMWZuE4I5E9QTLPd5SKNZERw0HPhmsExLeTzGvdTRR9Yytcb8y9zmm5QegHjKeFFJY0wEdeafGdQQ0MYfMSka70BVG8kOnbuKhlipmNMY/86lUQZnXOKF8MDX1NtaffXCydVWZRvlDfZd2jcKlmSfY1rysYD2y9Ct5G8HVBxRUMNGqKwjUAu1BmuCyKbTVvxiHibLeM7GHhDzoSfUUZi0BvwHehIrTTgpVmcm4lBKvJXSIKwQytmWeyOHWDNWUjlzPVCbsnmuOS0xrz0jjKvh3X9c+UujRS0NN63aW+Hg/DPJ1FbAqEcAzfK84Mxlz3u0G4E1DGUargrV skp-m5e5q0sg3ouk59q7m3qi"
 }
 resource "alicloud_ecs_key_pair" "publickey-chengdu" {
   provider = alicloud.chengdu
   key_pair_name   = "my_public_key-chengdu"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDOTPlCoh2g9l/XorzfbE6w90Vr4w8mX51JnXemQ74GJHfdjTQJ2yWQv/wDt4/wEI3A7Al/66vnNuR5skn8WkTvQFor+JYsxwJs/yDXfpwHjECW86N7dBhFX5etPhqK8QdsvuyoXNhZyGRAJS/4Gl3QUWa8yESP5sQQe99A5XURXH6s5s43hJ0dYLihx+365nqEPq2W22ynQv0FHJwaBuFHsDu8FRhtSnLowBN5cQwUNLS4U4cB8FQVg1qXNbfYfxyv1tT/kSmsurQQHF3d0LSEtolbJLUlGJpQ+Ixr54fiBikDutWm3A4m0vvNE9eY5ITv08wRZwzpgzX0AWQ6FKEj+MUDaK1hlx7MwyG9HPnLtxVMxDiJPDuN5DxXtGN67rAOYqBayc2K5WR5rMcZVbp7zPjsKswXp7a/jLZrw5/hwKwv0mtV85xYFQA/zsoP5SCV6mlNEHT7SO+n24dh5s4+SJzlL30zAxBQt151B0BAEqtCkyQInebTD+YJLCzI57E= huanw@outlook.com"
+ public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCd74+93PDWMWZuE4I5E9QTLPd5SKNZERw0HPhmsExLeTzGvdTRR9Yytcb8y9zmm5QegHjKeFFJY0wEdeafGdQQ0MYfMSka70BVG8kOnbuKhlipmNMY/86lUQZnXOKF8MDX1NtaffXCydVWZRvlDfZd2jcKlmSfY1rysYD2y9Ct5G8HVBxRUMNGqKwjUAu1BmuCyKbTVvxiHibLeM7GHhDzoSfUUZi0BvwHehIrTTgpVmcm4lBKvJXSIKwQytmWeyOHWDNWUjlzPVCbsnmuOS0xrz0jjKvh3X9c+UujRS0NN63aW+Hg/DPJ1FbAqEcAzfK84Mxlz3u0G4E1DGUargrV skp-m5e5q0sg3ouk59q7m3qi"
 }
 resource "alicloud_ecs_key_pair" "publickey-hongkong" {
   provider = alicloud.hongkong
   key_pair_name   = "my_public_key-hongkong"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDOTPlCoh2g9l/XorzfbE6w90Vr4w8mX51JnXemQ74GJHfdjTQJ2yWQv/wDt4/wEI3A7Al/66vnNuR5skn8WkTvQFor+JYsxwJs/yDXfpwHjECW86N7dBhFX5etPhqK8QdsvuyoXNhZyGRAJS/4Gl3QUWa8yESP5sQQe99A5XURXH6s5s43hJ0dYLihx+365nqEPq2W22ynQv0FHJwaBuFHsDu8FRhtSnLowBN5cQwUNLS4U4cB8FQVg1qXNbfYfxyv1tT/kSmsurQQHF3d0LSEtolbJLUlGJpQ+Ixr54fiBikDutWm3A4m0vvNE9eY5ITv08wRZwzpgzX0AWQ6FKEj+MUDaK1hlx7MwyG9HPnLtxVMxDiJPDuN5DxXtGN67rAOYqBayc2K5WR5rMcZVbp7zPjsKswXp7a/jLZrw5/hwKwv0mtV85xYFQA/zsoP5SCV6mlNEHT7SO+n24dh5s4+SJzlL30zAxBQt151B0BAEqtCkyQInebTD+YJLCzI57E= huanw@outlook.com"
+ public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCd74+93PDWMWZuE4I5E9QTLPd5SKNZERw0HPhmsExLeTzGvdTRR9Yytcb8y9zmm5QegHjKeFFJY0wEdeafGdQQ0MYfMSka70BVG8kOnbuKhlipmNMY/86lUQZnXOKF8MDX1NtaffXCydVWZRvlDfZd2jcKlmSfY1rysYD2y9Ct5G8HVBxRUMNGqKwjUAu1BmuCyKbTVvxiHibLeM7GHhDzoSfUUZi0BvwHehIrTTgpVmcm4lBKvJXSIKwQytmWeyOHWDNWUjlzPVCbsnmuOS0xrz0jjKvh3X9c+UujRS0NN63aW+Hg/DPJ1FbAqEcAzfK84Mxlz3u0G4E1DGUargrV skp-m5e5q0sg3ouk59q7m3qi"
 }
 
 
@@ -500,7 +468,627 @@ resource "alicloud_security_group_rule" "out-qingdao" {
   security_group_id = alicloud_security_group.SG-qingdao.id
   cidr_ip           = "0.0.0.0/0"
 }
-#resource "alicloud_instance" "name" {
+resource "alicloud_security_group" "SG-beijing" {
+  provider = alicloud.beijing
+  #name = "SG-qingdao"
+  vpc_id = alicloud_vpc.alivpc-beijing.id
+}
+resource "alicloud_security_group_rule" "ssh-beijing" {
+  provider = alicloud.beijing
+  type              = "ingress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "22/22"
+  priority          = 1
+  security_group_id = alicloud_security_group.SG-beijing.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "icmp-beijing" {
+   provider = alicloud.beijing
+  type              = "ingress"
+  ip_protocol       = "icmp"
+#  nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 11
+  security_group_id = alicloud_security_group.SG-beijing.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "out-beijing" {
+   provider = alicloud.beijing
+  type              = "egress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 2
+  security_group_id = alicloud_security_group.SG-beijing.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group" "SG-zhangjiakou" {
+  provider = alicloud.zhangjiakou
+  #name = "SG-qingdao"
+  vpc_id = alicloud_vpc.alivpc-zhangjiakou.id
+}
+resource "alicloud_security_group_rule" "ssh-zhangjiakou" {
+  provider = alicloud.zhangjiakou
+  type              = "ingress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "22/22"
+  priority          = 1
+  security_group_id = alicloud_security_group.SG-zhangjiakou.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "icmp-zhangjiakou" {
+   provider = alicloud.zhangjiakou
+  type              = "ingress"
+  ip_protocol       = "icmp"
+#  nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 11
+  security_group_id = alicloud_security_group.SG-zhangjiakou.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "out-zhangjiakou" {
+   provider = alicloud.zhangjiakou
+  type              = "egress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 2
+  security_group_id = alicloud_security_group.SG-zhangjiakou.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group" "SG-huhehaote" {
+  provider = alicloud.huhehaote
+  #name = "SG-qingdao"
+  vpc_id = alicloud_vpc.alivpc-huhehaote.id
+}
+resource "alicloud_security_group_rule" "ssh-huhehaote" {
+  provider = alicloud.huhehaote
+  type              = "ingress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "22/22"
+  priority          = 1
+  security_group_id = alicloud_security_group.SG-huhehaote.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "icmp-huhehaote" {
+   provider = alicloud.huhehaote
+  type              = "ingress"
+  ip_protocol       = "icmp"
+#  nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 11
+  security_group_id = alicloud_security_group.SG-huhehaote.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "out-huhehaote" {
+   provider = alicloud.huhehaote
+  type              = "egress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 2
+  security_group_id = alicloud_security_group.SG-huhehaote.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group" "SG-wulanchabu" {
+  provider = alicloud.wulanchabu
+  #name = "SG-qingdao"
+  vpc_id = alicloud_vpc.alivpc-wulanchabu.id
+}
+resource "alicloud_security_group_rule" "ssh-wulanchabu" {
+  provider = alicloud.wulanchabu
+  type              = "ingress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "22/22"
+  priority          = 1
+  security_group_id = alicloud_security_group.SG-wulanchabu.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "icmp-wulanchabu" {
+   provider = alicloud.wulanchabu
+  type              = "ingress"
+  ip_protocol       = "icmp"
+#  nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 11
+  security_group_id = alicloud_security_group.SG-wulanchabu.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "out-wulanchabu" {
+   provider = alicloud.wulanchabu
+  type              = "egress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 2
+  security_group_id = alicloud_security_group.SG-wulanchabu.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group" "SG-hangzhou" {
+  provider = alicloud.hangzhou
+  #name = "SG-qingdao"
+  vpc_id = alicloud_vpc.alivpc-hangzhou.id
+}
+resource "alicloud_security_group_rule" "ssh-hangzhou" {
+  provider = alicloud.hangzhou
+  type              = "ingress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "22/22"
+  priority          = 1
+  security_group_id = alicloud_security_group.SG-hangzhou.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "icmp-hangzhou" {
+   provider = alicloud.hangzhou
+  type              = "ingress"
+  ip_protocol       = "icmp"
+#  nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 11
+  security_group_id = alicloud_security_group.SG-hangzhou.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "out-hangzhou" {
+   provider = alicloud.hangzhou
+  type              = "egress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 2
+  security_group_id = alicloud_security_group.SG-hangzhou.id
+  cidr_ip           = "0.0.0.0/0"
+}
 
-  
-#}
+resource "alicloud_security_group" "SG-shanghai" {
+  provider = alicloud.shanghai
+  #name = "SG-qingdao"
+  vpc_id = alicloud_vpc.alivpc-shanghai.id
+}
+resource "alicloud_security_group_rule" "ssh-shanghai" {
+  provider = alicloud.shanghai
+  type              = "ingress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "22/22"
+  priority          = 1
+  security_group_id = alicloud_security_group.SG-shanghai.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "icmp-shanghai" {
+   provider = alicloud.shanghai
+  type              = "ingress"
+  ip_protocol       = "icmp"
+#  nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 11
+  security_group_id = alicloud_security_group.SG-shanghai.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "out-shanghai" {
+   provider = alicloud.shanghai
+  type              = "egress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 2
+  security_group_id = alicloud_security_group.SG-shanghai.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group" "SG-shenzhen" {
+  provider = alicloud.shenzhen
+  #name = "SG-qingdao"
+  vpc_id = alicloud_vpc.alivpc-shenzhen.id
+}
+resource "alicloud_security_group_rule" "ssh-shenzhen" {
+  provider = alicloud.shenzhen
+  type              = "ingress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "22/22"
+  priority          = 1
+  security_group_id = alicloud_security_group.SG-shenzhen.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "icmp-shenzhen" {
+   provider = alicloud.shenzhen
+  type              = "ingress"
+  ip_protocol       = "icmp"
+#  nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 11
+  security_group_id = alicloud_security_group.SG-shenzhen.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "out-shenzhen" {
+   provider = alicloud.shenzhen
+  type              = "egress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 2
+  security_group_id = alicloud_security_group.SG-shenzhen.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group" "SG-heyuan" {
+  provider = alicloud.heyuan
+  #name = "SG-qingdao"
+  vpc_id = alicloud_vpc.alivpc-heyuan.id
+}
+resource "alicloud_security_group_rule" "ssh-heyuan" {
+  provider = alicloud.heyuan
+  type              = "ingress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "22/22"
+  priority          = 1
+  security_group_id = alicloud_security_group.SG-heyuan.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "icmp-heyuan" {
+   provider = alicloud.heyuan
+  type              = "ingress"
+  ip_protocol       = "icmp"
+#  nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 11
+  security_group_id = alicloud_security_group.SG-heyuan.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "out-heyuan" {
+   provider = alicloud.heyuan
+  type              = "egress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 2
+  security_group_id = alicloud_security_group.SG-heyuan.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group" "SG-guangzhou" {
+  provider = alicloud.guangzhou
+  #name = "SG-qingdao"
+  vpc_id = alicloud_vpc.alivpc-guangzhou.id
+}
+resource "alicloud_security_group_rule" "ssh-guangzhou" {
+  provider = alicloud.guangzhou
+  type              = "ingress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "22/22"
+  priority          = 1
+  security_group_id = alicloud_security_group.SG-guangzhou.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "icmp-guangzhou" {
+   provider = alicloud.guangzhou
+  type              = "ingress"
+  ip_protocol       = "icmp"
+#  nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 11
+  security_group_id = alicloud_security_group.SG-guangzhou.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "out-guangzhou" {
+   provider = alicloud.guangzhou
+  type              = "egress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 2
+  security_group_id = alicloud_security_group.SG-guangzhou.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group" "SG-chengdu" {
+  provider = alicloud.chengdu
+  #name = "SG-qingdao"
+  vpc_id = alicloud_vpc.alivpc-chengdu.id
+}
+resource "alicloud_security_group_rule" "ssh-chengdu" {
+  provider = alicloud.chengdu
+  type              = "ingress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "22/22"
+  priority          = 1
+  security_group_id = alicloud_security_group.SG-chengdu.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "icmp-chengdu" {
+   provider = alicloud.chengdu
+  type              = "ingress"
+  ip_protocol       = "icmp"
+#  nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 11
+  security_group_id = alicloud_security_group.SG-chengdu.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "out-chengdu" {
+   provider = alicloud.chengdu
+  type              = "egress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 2
+  security_group_id = alicloud_security_group.SG-chengdu.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group" "SG-hongkong" {
+  provider = alicloud.hongkong
+  #name = "SG-qingdao"
+  vpc_id = alicloud_vpc.alivpc-hongkong.id
+}
+resource "alicloud_security_group_rule" "ssh-hongkong" {
+  provider = alicloud.hongkong
+  type              = "ingress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "22/22"
+  priority          = 1
+  security_group_id = alicloud_security_group.SG-hongkong.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "icmp-hongkong" {
+   provider = alicloud.hongkong
+  type              = "ingress"
+  ip_protocol       = "icmp"
+#  nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 11
+  security_group_id = alicloud_security_group.SG-hongkong.id
+  cidr_ip           = "0.0.0.0/0"
+}
+resource "alicloud_security_group_rule" "out-hongkong" {
+   provider = alicloud.hongkong
+  type              = "egress"
+  ip_protocol       = "tcp"
+ # nic_type          = "intranet"
+  policy            = "accept"
+  port_range        = "1/65535"
+  priority          = 2
+  security_group_id = alicloud_security_group.SG-hongkong.id
+  cidr_ip           = "0.0.0.0/0"
+}
+#############ECS instance########################
+resource "alicloud_instance" "ali-qingdao" {
+  provider = alicloud.qingdao
+  availability_zone = data.alicloud_zones.zones_ds_qingdao.zones.0.id
+  security_groups = [alicloud_security_group.SG-qingdao.id]
+  # series III
+  instance_type        = "ecs.n1.tiny"
+  system_disk_category = "cloud_efficiency"
+  image_id             = "aliyun_3_x64_20G_alibase_20210425.vhd"
+ # instance_name        = "test_foo"
+  vswitch_id = alicloud_vswitch.alivsw-qingdao.id
+  internet_max_bandwidth_out = 1
+}
+resource "alicloud_ecs_key_pair_attachment" "alikeypair-qingdao" {
+  provider = alicloud.qingdao
+  key_pair_name = "my_public_key-qingdao"
+  instance_ids  = [alicloud_instance.ali-qingdao.id]
+}
+resource "alicloud_instance" "ali-beijing" {
+  provider = alicloud.beijing
+  availability_zone = data.alicloud_zones.zones_ds_beijing.zones.0.id
+  security_groups = [alicloud_security_group.SG-beijing.id]
+  # series III
+  instance_type        = "ecs.t5-lc1m1.small"
+  system_disk_category = "cloud_efficiency"
+  image_id             = "aliyun_3_x64_20G_alibase_20210425.vhd"
+ # instance_name        = "test_foo"
+  vswitch_id = alicloud_vswitch.alivsw-beijing.id
+  internet_max_bandwidth_out = 1
+}
+resource "alicloud_ecs_key_pair_attachment" "alikeypair-beijing" {
+  provider = alicloud.beijing
+  key_pair_name = "my_public_key-beijing"
+  instance_ids  = [alicloud_instance.ali-beijing.id]
+}
+resource "alicloud_instance" "ali-zhangjiakou" {
+  provider = alicloud.zhangjiakou
+  availability_zone = data.alicloud_zones.zones_ds_zhangjiakou.zones.0.id
+  security_groups = [alicloud_security_group.SG-zhangjiakou.id]
+  # series III
+  instance_type        = "ecs.t5-lc1m1.small"
+  system_disk_category = "cloud_efficiency"
+  image_id             = "aliyun_3_x64_20G_alibase_20210425.vhd"
+ # instance_name        = "test_foo"
+  vswitch_id = alicloud_vswitch.alivsw-zhangjiakou.id
+  internet_max_bandwidth_out = 1
+}
+resource "alicloud_ecs_key_pair_attachment" "alikeypair-zhangjiakou" {
+  provider = alicloud.zhangjiakou
+  key_pair_name = "my_public_key-zhangjiakou"
+  instance_ids  = [alicloud_instance.ali-zhangjiakou.id]
+}
+resource "alicloud_instance" "ali-huhehaote" {
+  provider = alicloud.huhehaote
+  availability_zone = data.alicloud_zones.zones_ds_huhehaote.zones.0.id
+  security_groups = [alicloud_security_group.SG-huhehaote.id]
+  # series III
+  instance_type        = "ecs.t5-lc1m1.small"
+  system_disk_category = "cloud_efficiency"
+  image_id             = "aliyun_3_x64_20G_alibase_20210425.vhd"
+ # instance_name        = "test_foo"
+  vswitch_id = alicloud_vswitch.alivsw-huhehaote.id
+  internet_max_bandwidth_out = 1
+}
+resource "alicloud_ecs_key_pair_attachment" "alikeypair-huhehaote" {
+  provider = alicloud.huhehaote
+  key_pair_name = "my_public_key-huhehaote"
+  instance_ids  = [alicloud_instance.ali-huhehaote.id]
+}
+resource "alicloud_instance" "ali-wulanchabu" {
+  provider = alicloud.wulanchabu
+  availability_zone = data.alicloud_zones.zones_ds_wulanchabu.zones.0.id
+  security_groups = [alicloud_security_group.SG-wulanchabu.id]
+  # series III
+  instance_type        = "ecs.c6.large"
+  system_disk_category = "cloud_efficiency"
+  image_id             = "aliyun_3_x64_20G_alibase_20210425.vhd"
+ # instance_name        = "test_foo"
+  vswitch_id = alicloud_vswitch.alivsw-wulanchabu.id
+  internet_max_bandwidth_out = 1
+}
+resource "alicloud_ecs_key_pair_attachment" "alikeypair-wulanchabu" {
+  provider = alicloud.wulanchabu
+  key_pair_name = "my_public_key-wulanchabu"
+  instance_ids  = [alicloud_instance.ali-wulanchabu.id]
+}
+resource "alicloud_instance" "ali-hangzhou" {
+  provider = alicloud.hangzhou
+  availability_zone = data.alicloud_zones.zones_ds_hangzhou.zones.0.id
+  security_groups = [alicloud_security_group.SG-hangzhou.id]
+  # series III
+  instance_type        = "ecs.xn4.small"
+  system_disk_category = "cloud_efficiency"
+  image_id             = "aliyun_3_x64_20G_alibase_20210425.vhd"
+ # instance_name        = "test_foo"
+  vswitch_id = alicloud_vswitch.alivsw-hangzhou.id
+  internet_max_bandwidth_out = 1
+}
+resource "alicloud_ecs_key_pair_attachment" "alikeypair-hangzhou" {
+  provider = alicloud.hangzhou
+  key_pair_name = "my_public_key-hangzhou"
+  instance_ids  = [alicloud_instance.ali-hangzhou.id]
+}
+resource "alicloud_instance" "ali-shanghai" {
+  provider = alicloud.shanghai
+  availability_zone = data.alicloud_zones.zones_ds_shanghai.zones.0.id
+  security_groups = [alicloud_security_group.SG-shanghai.id]
+  # series III
+  instance_type        = "ecs.n1.tiny"
+  #system_disk_category = "cloud_efficiency"
+  image_id             = "aliyun_3_x64_20G_alibase_20210425.vhd"
+ # instance_name        = "test_foo"
+  vswitch_id = alicloud_vswitch.alivsw-shanghai.id
+  internet_max_bandwidth_out = 1
+}
+resource "alicloud_ecs_key_pair_attachment" "alikeypair-shanghai" {
+  provider = alicloud.shanghai
+  key_pair_name = "my_public_key-shanghai"
+  instance_ids  = [alicloud_instance.ali-shanghai.id]
+}
+resource "alicloud_instance" "ali-shenzhen" {
+  provider = alicloud.shenzhen
+  availability_zone = data.alicloud_zones.zones_ds_shenzhen.zones.0.id
+  security_groups = [alicloud_security_group.SG-shenzhen.id]
+  # series III
+  instance_type        = "ecs.n1.tiny"
+  system_disk_category = "cloud_efficiency"
+  image_id             = "aliyun_3_x64_20G_alibase_20210425.vhd"
+ # instance_name        = "test_foo"
+  vswitch_id = alicloud_vswitch.alivsw-shenzhen.id
+  internet_max_bandwidth_out = 1
+}
+resource "alicloud_ecs_key_pair_attachment" "alikeypair-shenzhen" {
+  provider = alicloud.shenzhen
+  key_pair_name = "my_public_key-shenzhen"
+  instance_ids  = [alicloud_instance.ali-shenzhen.id]
+}
+resource "alicloud_instance" "ali-heyuan" {
+  provider = alicloud.heyuan
+  availability_zone = data.alicloud_zones.zones_ds_heyuan.zones.0.id
+  security_groups = [alicloud_security_group.SG-heyuan.id]
+  # series III
+  instance_type        = "ecs.s6-c1m1.small"
+  system_disk_category = "cloud_efficiency"
+  image_id             = "aliyun_3_x64_20G_alibase_20210425.vhd"
+ # instance_name        = "test_foo"
+  vswitch_id = alicloud_vswitch.alivsw-heyuan.id
+  internet_max_bandwidth_out = 1
+}
+resource "alicloud_ecs_key_pair_attachment" "alikeypair-heyuan" {
+  provider = alicloud.heyuan
+  key_pair_name = "my_public_key-heyuan"
+  instance_ids  = [alicloud_instance.ali-heyuan.id]
+}
+resource "alicloud_instance" "ali-guangzhou" {
+  provider = alicloud.guangzhou
+  availability_zone = data.alicloud_zones.zones_ds_guangzhou.zones.0.id
+  security_groups = [alicloud_security_group.SG-guangzhou.id]
+  # series III
+  instance_type        = "ecs.s6-c1m1.small"
+  system_disk_category = "cloud_efficiency"
+  image_id             = "aliyun_3_x64_20G_alibase_20210425.vhd"
+ # instance_name        = "test_foo"
+  vswitch_id = alicloud_vswitch.alivsw-guangzhou.id
+  internet_max_bandwidth_out = 1
+}
+resource "alicloud_ecs_key_pair_attachment" "alikeypair-guangzhou" {
+  provider = alicloud.guangzhou
+  key_pair_name = "my_public_key-guangzhou"
+  instance_ids  = [alicloud_instance.ali-guangzhou.id]
+}
+resource "alicloud_instance" "ali-chengdu" {
+  provider = alicloud.chengdu
+  availability_zone = data.alicloud_zones.zones_ds_chengdu.zones.0.id
+  security_groups = [alicloud_security_group.SG-chengdu.id]
+  # series III
+  instance_type        = "ecs.t5-lc2m1.nano"
+  system_disk_category = "cloud_efficiency"
+  image_id             = "aliyun_3_x64_20G_alibase_20210425.vhd"
+ # instance_name        = "test_foo"
+  vswitch_id = alicloud_vswitch.alivsw-chengdu.id
+  internet_max_bandwidth_out = 1
+}
+resource "alicloud_ecs_key_pair_attachment" "alikeypair-chengdu" {
+  provider = alicloud.chengdu
+  key_pair_name = "my_public_key-chengdu"
+  instance_ids  = [alicloud_instance.ali-chengdu.id]
+}
+resource "alicloud_instance" "ali-hongkong" {
+  provider = alicloud.hongkong
+  availability_zone = data.alicloud_zones.zones_ds_hongkong.zones.0.id
+  security_groups = [alicloud_security_group.SG-hongkong.id]
+  # series III
+  instance_type        = "ecs.xn4.small"
+  system_disk_category = "cloud_efficiency"
+  image_id             = "aliyun_3_x64_20G_alibase_20210425.vhd"
+ # instance_name        = "test_foo"
+  vswitch_id = alicloud_vswitch.alivsw-hongkong.id
+  internet_max_bandwidth_out = 1
+}
+resource "alicloud_ecs_key_pair_attachment" "alikeypair-hongkong" {
+  provider = alicloud.hongkong
+  key_pair_name = "my_public_key-hongkong"
+  instance_ids  = [alicloud_instance.ali-hongkong.id]
+}
