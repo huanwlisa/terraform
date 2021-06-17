@@ -966,6 +966,7 @@ resource "alicloud_instance" "ali-qingdao" {
   vswitch_id                 = alicloud_vswitch.alivsw-qingdao.id
   internet_max_bandwidth_out = 1
   key_name = alicloud_ecs_key_pair.publickey-qingdao.key_pair_name
+  user_data = file("showip.sh")
 }
 #resource "alicloud_ecs_key_pair_attachment" "alikeypair-qingdao" {
 #  provider      = alicloud.qingdao
