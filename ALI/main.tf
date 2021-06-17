@@ -257,73 +257,73 @@ resource "alicloud_vpc" "alivpc-hongkong" {
 
 #############VSWITCH############
 resource "alicloud_vswitch" "alivsw-qingdao" {
-  # provider = alicloud.qingdao
+   provider = alicloud.qingdao
   vpc_id     = alicloud_vpc.alivpc-qingdao.id
   cidr_block = "10.0.0.0/24"
   zone_id    = data.alicloud_zones.zones_ds_qingdao.zones.0.id
 }
 resource "alicloud_vswitch" "alivsw-beijing" {
-  #  provider = alicloud.beijing
+    provider = alicloud.beijing
   vpc_id     = alicloud_vpc.alivpc-beijing.id
   cidr_block = "10.1.0.0/24"
   zone_id    = data.alicloud_zones.zones_ds_beijing.zones.0.id
 }
 resource "alicloud_vswitch" "alivsw-zhangjiakou" {
-  # provider = alicloud.zhangjiakou
+   provider = alicloud.zhangjiakou
   vpc_id     = alicloud_vpc.alivpc-zhangjiakou.id
   cidr_block = "10.2.0.0/24"
   zone_id    = data.alicloud_zones.zones_ds_zhangjiakou.zones.0.id
 }
 resource "alicloud_vswitch" "alivsw-huhehaote" {
-  # provider = alicloud.huhehaote
+   provider = alicloud.huhehaote
   vpc_id     = alicloud_vpc.alivpc-huhehaote.id
   cidr_block = "10.3.0.0/24"
   zone_id    = data.alicloud_zones.zones_ds_huhehaote.zones.0.id
 }
 resource "alicloud_vswitch" "alivsw-wulanchabu" {
-  # provider = alicloud.wulanchabu
+   provider = alicloud.wulanchabu
   vpc_id     = alicloud_vpc.alivpc-wulanchabu.id
   cidr_block = "10.4.0.0/24"
   zone_id    = data.alicloud_zones.zones_ds_wulanchabu.zones.0.id
 }
 resource "alicloud_vswitch" "alivsw-hangzhou" {
-  # provider = alicloud.hangzhou
+   provider = alicloud.hangzhou
   vpc_id     = alicloud_vpc.alivpc-hangzhou.id
   cidr_block = "10.5.0.0/24"
   zone_id    = data.alicloud_zones.zones_ds_hangzhou.zones.0.id
 }
 resource "alicloud_vswitch" "alivsw-shanghai" {
-  # provider = alicloud.shanghai
+   provider = alicloud.shanghai
   vpc_id     = alicloud_vpc.alivpc-shanghai.id
   cidr_block = "10.6.0.0/24"
   zone_id    = data.alicloud_zones.zones_ds_shanghai.zones.1.id
 }
 resource "alicloud_vswitch" "alivsw-shenzhen" {
-  # provider = alicloud.shenzhen
+   provider = alicloud.shenzhen
   vpc_id     = alicloud_vpc.alivpc-shenzhen.id
   cidr_block = "10.7.0.0/24"
   zone_id    = data.alicloud_zones.zones_ds_shenzhen.zones.0.id
 }
 resource "alicloud_vswitch" "alivsw-heyuan" {
-  # provider = alicloud.heyuan
+   provider = alicloud.heyuan
   vpc_id     = alicloud_vpc.alivpc-heyuan.id
   cidr_block = "10.8.0.0/24"
   zone_id    = data.alicloud_zones.zones_ds_heyuan.zones.0.id
 }
 resource "alicloud_vswitch" "alivsw-guangzhou" {
-  #  provider = alicloud.guangzhou
+   provider = alicloud.guangzhou
   vpc_id     = alicloud_vpc.alivpc-guangzhou.id
   cidr_block = "10.9.0.0/24"
   zone_id    = data.alicloud_zones.zones_ds_guangzhou.zones.0.id
 }
 resource "alicloud_vswitch" "alivsw-chengdu" {
-  #  provider = alicloud.chengdu
+    provider = alicloud.chengdu
   vpc_id     = alicloud_vpc.alivpc-chengdu.id
   cidr_block = "10.10.0.0/24"
   zone_id    = data.alicloud_zones.zones_ds_chengdu.zones.0.id
 }
 resource "alicloud_vswitch" "alivsw-hongkong" {
-  # provider = alicloud.hongkong
+   provider = alicloud.hongkong
   vpc_id     = alicloud_vpc.alivpc-hongkong.id
   cidr_block = "10.11.0.0/24"
   zone_id    = data.alicloud_zones.zones_ds_hongkong.zones.0.id
@@ -528,7 +528,7 @@ resource "alicloud_security_group_rule" "out-qingdao" {
   ip_protocol = "tcp"
   # nic_type          = "intranet"
   policy            = "accept"
-  port_range        = "-1/-1"
+  port_range        = "1/65535"
   priority          = 2
   security_group_id = alicloud_security_group.SG-qingdao.id
   cidr_ip           = "0.0.0.0/0"
@@ -566,7 +566,7 @@ resource "alicloud_security_group_rule" "out-beijing" {
   ip_protocol = "tcp"
   # nic_type          = "intranet"
   policy            = "accept"
-  port_range        = "-1/-1"
+  port_range        = "1/65535"
   priority          = 2
   security_group_id = alicloud_security_group.SG-beijing.id
   cidr_ip           = "0.0.0.0/0"
@@ -604,7 +604,7 @@ resource "alicloud_security_group_rule" "out-zhangjiakou" {
   ip_protocol = "tcp"
   # nic_type          = "intranet"
   policy            = "accept"
-  port_range        = "-1/-1"
+  port_range        = "1/65535"
   priority          = 2
   security_group_id = alicloud_security_group.SG-zhangjiakou.id
   cidr_ip           = "0.0.0.0/0"
@@ -642,7 +642,7 @@ resource "alicloud_security_group_rule" "out-huhehaote" {
   ip_protocol = "tcp"
   # nic_type          = "intranet"
   policy            = "accept"
-  port_range        = "-1/-1"
+  port_range        = "1/65535"
   priority          = 2
   security_group_id = alicloud_security_group.SG-huhehaote.id
   cidr_ip           = "0.0.0.0/0"
@@ -680,7 +680,7 @@ resource "alicloud_security_group_rule" "out-wulanchabu" {
   ip_protocol = "tcp"
   # nic_type          = "intranet"
   policy            = "accept"
-  port_range        = "-1/-1"
+  port_range        = "1/65535"
   priority          = 2
   security_group_id = alicloud_security_group.SG-wulanchabu.id
   cidr_ip           = "0.0.0.0/0"
@@ -718,7 +718,7 @@ resource "alicloud_security_group_rule" "out-hangzhou" {
   ip_protocol = "tcp"
   # nic_type          = "intranet"
   policy            = "accept"
-  port_range        = "-1/-1"
+  port_range        = "1/65535"
   priority          = 2
   security_group_id = alicloud_security_group.SG-hangzhou.id
   cidr_ip           = "0.0.0.0/0"
@@ -757,7 +757,7 @@ resource "alicloud_security_group_rule" "out-shanghai" {
   ip_protocol = "tcp"
   # nic_type          = "intranet"
   policy            = "accept"
-  port_range        = "-1/-1"
+  port_range        = "1/65535"
   priority          = 2
   security_group_id = alicloud_security_group.SG-shanghai.id
   cidr_ip           = "0.0.0.0/0"
@@ -795,7 +795,7 @@ resource "alicloud_security_group_rule" "out-shenzhen" {
   ip_protocol = "tcp"
   # nic_type          = "intranet"
   policy            = "accept"
-  port_range        = "-1/-1"
+  port_range        = "1/65535"
   priority          = 2
   security_group_id = alicloud_security_group.SG-shenzhen.id
   cidr_ip           = "0.0.0.0/0"
@@ -833,7 +833,7 @@ resource "alicloud_security_group_rule" "out-heyuan" {
   ip_protocol = "tcp"
   # nic_type          = "intranet"
   policy            = "accept"
-  port_range        = "-1/-1"
+  port_range        = "1/65535"
   priority          = 2
   security_group_id = alicloud_security_group.SG-heyuan.id
   cidr_ip           = "0.0.0.0/0"
@@ -871,7 +871,7 @@ resource "alicloud_security_group_rule" "out-guangzhou" {
   ip_protocol = "tcp"
   # nic_type          = "intranet"
   policy            = "accept"
-  port_range        = "-1/-1"
+  port_range        = "1/65535"
   priority          = 2
   security_group_id = alicloud_security_group.SG-guangzhou.id
   cidr_ip           = "0.0.0.0/0"
@@ -909,7 +909,7 @@ resource "alicloud_security_group_rule" "out-chengdu" {
   ip_protocol = "tcp"
   # nic_type          = "intranet"
   policy            = "accept"
-  port_range        = "-1/-1"
+  port_range        = "1/65535"
   priority          = 2
   security_group_id = alicloud_security_group.SG-chengdu.id
   cidr_ip           = "0.0.0.0/0"
@@ -947,7 +947,7 @@ resource "alicloud_security_group_rule" "out-hongkong" {
   ip_protocol = "tcp"
   # nic_type          = "intranet"
   policy            = "accept"
-  port_range        = "-1/-1"
+  port_range        = "1/65535"
   priority          = 2
   security_group_id = alicloud_security_group.SG-hongkong.id
   cidr_ip           = "0.0.0.0/0"
