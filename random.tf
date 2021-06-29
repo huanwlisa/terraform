@@ -1,6 +1,6 @@
 resource "random_pet" "my-pet" {
     prefix = "Mrs"
     separator = "."
-    length = 5
+    length = 4
   
 }
